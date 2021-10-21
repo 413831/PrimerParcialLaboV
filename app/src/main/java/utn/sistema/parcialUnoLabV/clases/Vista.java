@@ -1,8 +1,11 @@
 package utn.sistema.parcialUnoLabV.clases;
 
+import static android.os.Build.VERSION_CODES.R;
+
 import android.app.Activity;
+import android.util.Log;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class Vista
@@ -11,9 +14,8 @@ public class Vista
     Activity activity;
     Controlador controlador;
     EditText edNombre;
-    EditText edContrasenia;
-    EditText edConfirmacion;
-    RadioGroup radioGroup;
+    EditText edCantidad;
+    EditText edPrecio;
 
     public Vista(Producto usuario, Activity activity)
     {
@@ -23,48 +25,28 @@ public class Vista
 
     public void cargarModelo()
     {
-        /*
+        
         this.usuario.setNombre(this.edNombre.getText().toString());
-        this.usuario.setContrasenia(this.edContrasenia.getText().toString());
-        int radioSeleccionado = this.radioGroup.getCheckedRadioButtonId();
-        TipoProducto tipo = TipoProducto.valueOf(parseEnum(((RadioButton) this.activity.findViewById(radioSeleccionado)).getText().toString()));
-        this.usuario.setTipoProducto(tipo);
+        this.usuario.setCantidad(Integer.valueOf(this.edCantidad.getText().toString()));
+        this.usuario.setPrecio(Double.valueOf(this.edPrecio.getText().toString()));
         Log.d("Detalle Producto", this.usuario.toString());
 
-         */
     }
 
     public void cargarElementos()
     {
-        /*
-        this.edNombre = this.activity.findViewById(R.id.edNombre);
-        this.edContrasenia = this.activity.findViewById(R.id.edContrasenia);
-        this.edConfirmacion = this.activity.findViewById(R.id.edConfirmacion);
-        // Obtengo valor del radiobutton obteniendo primero el radio group
-        this.radioGroup = this.activity.findViewById(R.id.radioPerfil);
+        this.edNombre = this.activity.findViewById(R.id.);
+        this.edCantidad = this.activity.findViewById(R.id.edCantidad);
+        this.edPrecio = this.activity.findViewById(R.id.edPrecio);
         Button btn = activity.findViewById(R.id.btnGuardar);
         btn.setOnClickListener(this.controlador);
-
-         */
     }
 
     public void mostrarModelo()
     {
-        /*
         this.edNombre.setText(this.usuario.getNombre());
-        this.edContrasenia.setText(this.usuario.getContrasenia());
-        RadioButton radioButtonProducto = this.activity.findViewById(R.id.radioProducto);
-        RadioButton radioButtonAdmin = this.activity.findViewById(R.id.radioAdmin);
-        if(radioButtonProducto.getText().toString().equals(this.usuario.getTipoProducto()))
-        {
-            radioButtonProducto.setChecked(true);
-        }
-        else
-        {
-            radioButtonAdmin.setChecked(true);
-        }
-
-         */
+        this.edCantidad.setText(String.valueOf(this.usuario.getCantidad()));
+        this.edCantidad.setText(String.valueOf(this.usuario.getPrecio()));
     }
 
     public void mostrarMensaje(String mensaje)
@@ -77,19 +59,5 @@ public class Vista
         this.controlador = controlador;
         this.cargarElementos();
         this.mostrarModelo();
-    }
-
-    private String parseEnum(String value)
-    {
-        switch (value)
-        {
-            case "Producto" :
-            case "User" :
-                return "USUARIO";
-            case "Administrador":
-            case "Admin" :
-                return "ADMINISTRADOR";
-        }
-        return "";
     }
 }

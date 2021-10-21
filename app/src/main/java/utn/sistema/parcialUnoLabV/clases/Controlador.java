@@ -19,20 +19,18 @@ public class Controlador implements View.OnClickListener
     private Activity activity;
     private List<Producto> productos;
     private static Controlador controlador;
-    private ServicioProductos servicioProductos;
     private int indice;
 
-    private Controlador(Handler handler)
+    private Controlador()
     {
         this.productos = this.mockProductos();
-        this.servicioProductos = new ServicioProductos(handler);
     }
 
-    public static Controlador getInstance(Handler handler)
+    public static Controlador getInstance()
     {
         if(Controlador.controlador == null)
         {
-            Controlador.controlador = new Controlador(handler);
+            Controlador.controlador = new Controlador();
         }
         return Controlador.controlador;
     }
@@ -40,41 +38,13 @@ public class Controlador implements View.OnClickListener
     @Override
     public void onClick(View v)
     {
-        if(Controlador.controlador.validarDatos())
-        {
-            Controlador.controlador.vista.cargarModelo();
-            Controlador.controlador.productos.set(Controlador.controlador.indice,Controlador.controlador.producto);
+        Controlador.controlador.vista.cargarModelo();
+        Controlador.controlador.productos.set(Controlador.controlador.indice,Controlador.controlador.producto);
 
-            Log.d("Producto actualizado", Controlador.controlador.productos.get(Controlador.controlador.indice).toString());
+        Log.d("Producto actualizado", Controlador.controlador.productos.get(Controlador.controlador.indice).toString());
 
-            // Termino la actividad
-            Controlador.controlador.activity.finish();
-        }
-    }
-
-    private boolean validarDatos()
-    {
-        String mensaje = "";
-        String pass = Controlador.controlador.vista.edContrasenia.getText().toString();
-        String confirmacion = Controlador.controlador.vista.edConfirmacion.getText().toString();
-
-        if(pass.equals(confirmacion) && Controlador.controlador.vista.edNombre.getText().length() >= 3)
-        {
-            return true;
-        }
-        else
-        {
-            if(Locale.getDefault().getLanguage() == new Locale("en").getLanguage())
-            {
-                mensaje = "Please check your password, enter an user name with least 3 characters";
-            }
-            else if(Locale.getDefault().getLanguage() == new Locale("es").getLanguage())
-            {
-                mensaje = "Por favor revise su contraseña, ingrese un nombre con al menos 3 caracteres";
-            }
-            Controlador.controlador.vista.mostrarMensaje(mensaje);
-            return false;
-        }
+        // Termino la actividad
+        Controlador.controlador.activity.finish();
     }
 
     private List<Producto> mockProductos()
@@ -110,8 +80,9 @@ public class Controlador implements View.OnClickListener
         return Controlador.controlador.productos;
     }
 
-    public void setProductos(List<Producto> productos) {
-        Controlador.controlador.productos = productos;
+    public static void setProductos(List<Producto> productos)
+    {
+        Controlador.getInstance().productos = productos;
     }
 
     public void setVista(Vista vista) {

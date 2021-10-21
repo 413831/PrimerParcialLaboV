@@ -12,6 +12,7 @@ import java.util.List;
 
 import utn.sistema.parcialUnoLabV.R;
 import utn.sistema.parcialUnoLabV.clases.ProductoViewHolder;
+import utn.sistema.parcialUnoLabV.listeners.ClickProducto;
 
 public class ProductoAdapter extends RecyclerView.Adapter<ProductoViewHolder>
 {
@@ -42,6 +43,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoViewHolder>
     {
         Producto producto = this.productos.get(position);
 
+        View.OnClickListener onClickListener = new ClickProducto(this.activity,position);
         holder.txtNombre.setText(producto.getNombre());
         holder.txtCantidad.setText(String.valueOf(producto.getCantidad()));
         holder.txtPrecio.setText(String.valueOf(producto.getPrecio()));

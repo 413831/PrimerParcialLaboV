@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback
 
         this.productos = new ArrayList<>();
         Handler handler = new Handler(this);
-        Controlador.getInstance(handler).setProductos(this.productos);
+        Controlador.setProductos(this.productos);
         this.adapter = new ProductoAdapter(this.productos, this);
         ServicioProductos servicioProductos = new ServicioProductos(handler);
         servicioProductos.start();
