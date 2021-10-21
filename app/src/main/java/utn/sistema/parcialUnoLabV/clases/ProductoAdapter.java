@@ -44,9 +44,10 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoViewHolder>
         Producto producto = this.productos.get(position);
 
         View.OnClickListener onClickListener = new ClickProducto(this.activity,position);
+        holder.layout.setOnClickListener(onClickListener);
         holder.txtNombre.setText(producto.getNombre());
-        holder.txtCantidad.setText(String.valueOf(producto.getCantidad()));
-        holder.txtPrecio.setText(String.valueOf(producto.getPrecio()));
+        holder.txtCantidad.setText("Cantidad: " + String.valueOf(producto.getCantidad()));
+        holder.txtPrecio.setText("Precio unidad: " + String.valueOf(producto.getPrecio()));
     }
 
     @Override

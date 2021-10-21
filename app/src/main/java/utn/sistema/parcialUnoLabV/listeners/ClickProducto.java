@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 
-import utn.sistema.parcialUnoLabV.clases.EditarProducto;
+import utn.sistema.parcialUnoLabV.EditarProducto;
 
 public class ClickProducto implements View.OnClickListener
 {

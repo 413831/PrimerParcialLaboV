@@ -3,13 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".clases.EditarProducto"
-    android:orientation="vertical">
+    tools:context=".EditarProducto"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:padding="10dp">
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="@string/name"></TextView>
 
     <EditText
@@ -20,6 +23,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="@string/quantity"></TextView>
 
     <EditText
@@ -31,18 +35,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="@string/price"></TextView>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/edConfirmacion"
+        android:id="@+id/edPrecio"
         android:inputType="number"></EditText>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center">
 
 
         <Button
@@ -52,7 +58,6 @@
             android:text="@string/txtButton"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textAllCaps="true"
-            android:drawableLeft="@drawable/ic_launcher_foreground"
             android:id="@+id/btnGuardar"/>
 
 

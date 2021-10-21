@@ -1,4 +1,4 @@
-package utn.sistema.parcialUnoLabV.clases;
+package utn.sistema.parcialUnoLabV;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +10,9 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import utn.sistema.parcialUnoLabV.R;
+import utn.sistema.parcialUnoLabV.clases.Controlador;
+import utn.sistema.parcialUnoLabV.clases.Producto;
+import utn.sistema.parcialUnoLabV.clases.Vista;
 
 public class EditarProducto extends AppCompatActivity
 {

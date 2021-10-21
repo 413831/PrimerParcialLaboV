@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback
         setContentView(R.layout.activity_main);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Menú principal");
-        actionBar.setDisplayHomeAsUpEnabled(true);
 
         this.productos = new ArrayList<>();
         Handler handler = new Handler(this);
@@ -71,5 +70,12 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback
             e.printStackTrace();
         }
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        this.adapter.notifyDataSetChanged();
+
     }
 }
