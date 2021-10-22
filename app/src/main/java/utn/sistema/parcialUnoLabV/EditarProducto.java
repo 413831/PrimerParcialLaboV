@@ -9,6 +9,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Locale;
+
 import utn.sistema.parcialUnoLabV.R;
 import utn.sistema.parcialUnoLabV.clases.Controlador;
 import utn.sistema.parcialUnoLabV.clases.Producto;
@@ -23,9 +25,19 @@ public class EditarProducto extends AppCompatActivity
         setContentView(R.layout.activity_editar_producto);
 
         int indice = getIntent().getExtras().getInt("index");
-
+        String tituloActionBar = "";
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Editar producto");
+
+        if(Locale.getDefault().getLanguage() == new Locale("es").getLanguage())
+        {
+            tituloActionBar = "Modificar";
+        }
+        else
+        {
+            tituloActionBar = "Modify";
+        }
+
+        actionBar.setTitle(tituloActionBar);
         actionBar.setDisplayHomeAsUpEnabled(true);
     }
 

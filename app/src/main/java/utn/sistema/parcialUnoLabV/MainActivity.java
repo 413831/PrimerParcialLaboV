@@ -16,6 +16,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import utn.sistema.parcialUnoLabV.clases.Controlador;
 import utn.sistema.parcialUnoLabV.clases.ProductoAdapter;
@@ -32,7 +33,18 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Menú principal");
+        String tituloActionBar = "";
+
+        if(Locale.getDefault().getLanguage() == new Locale("es").getLanguage())
+        {
+            tituloActionBar = "Menú principal";
+        }
+        else
+        {
+            tituloActionBar = "Home menu";
+        }
+
+        actionBar.setTitle(tituloActionBar);
 
         this.productos = new ArrayList<>();
         Handler handler = new Handler(this);
