@@ -23,7 +23,7 @@ public class Controlador implements View.OnClickListener
 
     private Controlador()
     {
-        this.productos = this.mockProductos();
+
     }
 
     public static Controlador getInstance()
@@ -45,27 +45,6 @@ public class Controlador implements View.OnClickListener
 
         // Termino la actividad
         Controlador.controlador.activity.finish();
-    }
-
-    private List<Producto> mockProductos()
-    {
-        /*
-        List<Producto> mockProductos = new ArrayList<>();
-
-        mockProductos.add(new Producto("Pepito","SARASA", TipoProducto.USUARIO));
-        mockProductos.add(new Producto("Manuela","SARASA", TipoProducto.USUARIO));
-        mockProductos.add(new Producto("Jose","MELON1235", TipoProducto.ADMINISTRADOR));
-        mockProductos.add(new Producto("Josefina","OBELISCO99", TipoProducto.USUARIO));
-        mockProductos.add(new Producto("Francisco","MosTaZa12", TipoProducto.ADMINISTRADOR));
-        mockProductos.add(new Producto("Hermeneguildo","FONTANARROSA", TipoProducto.USUARIO));
-        mockProductos.add(new Producto("Mustafa","LOSNUEVELADRONES", TipoProducto.ADMINISTRADOR));
-        mockProductos.add(new Producto("Beatriz","LAZARO1235", TipoProducto.USUARIO));
-        mockProductos.add(new Producto("Mirtha","HIGHLANDER99", TipoProducto.USUARIO));
-
-        return mockProductos;
-
-         */
-        return null;
     }
 
     public Producto getProducto(int indice) {

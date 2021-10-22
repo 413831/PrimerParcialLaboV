@@ -33,18 +33,8 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ActionBar actionBar = getSupportActionBar();
-        String tituloActionBar = "";
 
-        if(Locale.getDefault().getLanguage() == new Locale("es").getLanguage())
-        {
-            tituloActionBar = "Menú principal";
-        }
-        else
-        {
-            tituloActionBar = "Home menu";
-        }
-
-        actionBar.setTitle(tituloActionBar);
+        actionBar.setTitle(this.getResources().getString(R.string.main_menu));
 
         this.productos = new ArrayList<>();
         Handler handler = new Handler(this);

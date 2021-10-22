@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">First Midterm App</string>
+    <string name="main_menu">Home page</string>
+    <string name="edit_menu">Modify</string>
     <string name="name">Product Name</string>
     <string name="quantity">Quantity:</string>
     <string name="price">Price:</string>

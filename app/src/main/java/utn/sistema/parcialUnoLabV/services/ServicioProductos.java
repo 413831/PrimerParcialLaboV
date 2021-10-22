@@ -24,7 +24,7 @@ public class ServicioProductos extends Thread
     private void getObjetos()
     {
         // IP para Localhost
-        String url = "http:/192.168.1.6:3000/productos";
+        String url = "http://XXX.XXX.X.X:3000/productos";
 
         HttpConnection httpConnection = HttpConnection.getInstance();
         String s = httpConnection.obtenerElementos(url);

@@ -25,7 +25,6 @@ public class Vista
 
     public void cargarModelo()
     {
-        
         this.producto.setNombre(this.edNombre.getText().toString());
         this.producto.setCantidad(Integer.valueOf(this.edCantidad.getText().toString()));
         this.producto.setPrecio(Double.valueOf(this.edPrecio.getText().toString()));
@@ -47,11 +46,6 @@ public class Vista
         this.edNombre.setText(this.producto.getNombre());
         this.edCantidad.setText(String.valueOf(this.producto.getCantidad()));
         this.edPrecio.setText(String.valueOf(this.producto.getPrecio()));
-    }
-
-    public void mostrarMensaje(String mensaje)
-    {
-        Toast.makeText(this.activity,mensaje, Toast.LENGTH_SHORT).show();
     }
 
     public void setControlador(Controlador controlador)

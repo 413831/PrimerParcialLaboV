@@ -24,20 +24,9 @@ public class EditarProducto extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_producto);
 
-        int indice = getIntent().getExtras().getInt("index");
-        String tituloActionBar = "";
         ActionBar actionBar = getSupportActionBar();
 
-        if(Locale.getDefault().getLanguage() == new Locale("es").getLanguage())
-        {
-            tituloActionBar = "Modificar";
-        }
-        else
-        {
-            tituloActionBar = "Modify";
-        }
-
-        actionBar.setTitle(tituloActionBar);
+        actionBar.setTitle(this.getResources().getString(R.string.main_menu));
         actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
@@ -57,9 +46,9 @@ public class EditarProducto extends AppCompatActivity
     {
         super.onStart();
         int indice = getIntent().getExtras().getInt("index");
-        Log.d("INDEX", String.valueOf(indice));
+
         Producto producto = Controlador.getInstance().getProducto(indice);
-        Log.d("USUARIO", producto.toString());
+
         Vista vista = new Vista(producto,this);
         Controlador.getInstance().setIndice(indice);
         Controlador.getInstance().setProducto(producto);

@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Primer Parcial App</string>
+    <string name="main_menu">Menú principal</string>
+    <string name="edit_menu">Modificar</string>
     <string name="name">Nombre del producto</string>
     <string name="quantity">Cantidad:</string>
     <string name="price">Precio:</string>
